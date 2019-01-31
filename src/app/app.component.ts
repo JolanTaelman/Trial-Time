@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {SuiModule} from 'ng2-semantic-ui';
+
 
 @Component({
   selector: 'app-root',
