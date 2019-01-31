@@ -16,11 +16,12 @@
                 <th>Name</th>
               </tr>
             </thead>
-             <tr *ngFor="let item of items | async; let i = index" 
+             <tr class="txt" *ngFor="let item of items | async; let i = index" 
+             style="cursor: pointer;"
              (click)="verwijderTrial(item.key)"
              >
                 <td class="left aligned">{{i+1}}</td>
-                <td>{{item.payload.val()}}</td>
+                <td><p> {{item.payload.val()}}</p></td>
               </tr>
             </tbody>
           </table>
