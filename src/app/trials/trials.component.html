@@ -1,30 +1,41 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <div class="ui container padding">
-  <div class="ui one column relaxed grid">  
-      <div class="column">
-          <h1>Input Trial</h1> <div class="ui input">
-               <input type="text" #box (keyup.enter)="voegToe(box.value); box.value=''" >
-             </div>
-       </div>
- 
-      <div class="column">
-          <table class="ui right aligned table">
-            <thead>
-              <tr>
-                <th class="left aligned">#</th>
-                <th>Name</th>
-              </tr>
-            </thead>
-             <tr class="txt" *ngFor="let item of items | async; let i = index" 
-             style="cursor: pointer;"
-             (click)="verwijderTrial(item.key)"
-             >
-                <td class="left aligned">{{i+1}}</td>
-                <td><p> {{item.payload.val()}}</p></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+  <div class="ui one column relaxed grid">
+    <div class="column">
+      <h1>Input Trial</h1>
+      <div class="ui grid">
+      <div class="three wide column">
+      <div class="ui input">
+        <input type="text" #box (keyup.enter)="voegToe(box.value); box.value=''">
+      </div>
+      </div>
+      <div  class="errbox">
+        <p *ngIf="error" (click)="error = false;" style="cursor: pointer; margin: auto;" >Already exists in the list</p>
+      </div>
+      <div class="clearbutton">
+          <button class="ui negative basic button" (click)="verwijderAlles()" >Clear</button>
+      </div>
+    </div>
+  </div>
+  
+    <div class="column">
+      <table class="ui right aligned table">
+        <thead>
+          <tr>
+            <th class="left aligned">#</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tr class="txt" *ngFor="let item of items | async; let i = index" style="cursor: pointer;" (click)="verwijderTrial(item.key, item.payload.val())">
+          <td class="left aligned">{{i+1}}</td>
+          <td>
+            <p> {{item.payload.val()}}</p>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
