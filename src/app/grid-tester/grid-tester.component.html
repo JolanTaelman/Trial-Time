@@ -1,0 +1,24 @@
+<div class="ui container">
+  <div class="center pad5">
+    <button (click)="showWip = !showWip"> show Wip</button>
+  </div>
+
+  <div class="center pad5">
+    <div *ngIf="showWip">
+      <table>
+        <tr *ngFor="let item of [0,1,2,3]; let i=index" class="checkerRow">
+          <td *ngFor="let item of [0,1,2,3]; let f=index" class="checkerSquare">
+            <div class="square" *ngIf="currentAttempt[i][f] === 0" (click)="setGrid(i, f)"></div>
+            <img style="height: 96px; width: 100px;" src="assets/haurchey.png" *ngIf="currentAttempt[i][f] === 1"
+              (click)="setGrid(i, f)">
+          </td>
+        </tr>
+      </table>
+
+      <div class="center">
+        <button (click)="checkGrid()"> Check values</button>
+      </div>
+      <div class="center" *ngIf="solved"> It'll work</div>
+    </div>
+  </div>
+</div>
