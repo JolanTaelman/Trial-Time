@@ -9,7 +9,7 @@
         <tr *ngFor="let item of [0,1,2,3]; let i=index" class="checkerRow">
           <td *ngFor="let item of [0,1,2,3]; let f=index" class="checkerSquare">
             <div class="square" *ngIf="currentAttempt[i][f] === 0" (click)="setGrid(i, f)"></div>
-            <img style="height: 96px; width: 100px;" src="assets/haurchey.png" *ngIf="currentAttempt[i][f] === 1"
+            <img style="height: 96px; width: 100px;" src="haurchey.png" *ngIf="currentAttempt[i][f] === 1"
               (click)="setGrid(i, f)">
           </td>
         </tr>
