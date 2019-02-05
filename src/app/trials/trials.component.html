@@ -1,6 +1,3 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-
 <div class="ui container padding">
   <div class="ui one column relaxed grid">
     <div class="column">
@@ -11,7 +8,7 @@
         <input type="text" #box (keyup.enter)="voegToe(box.value); box.value=''">
       </div>
       </div>
-      <div  class="errbox">
+      <div class="errbox">
         <p *ngIf="error" (click)="error = false;" style="cursor: pointer; margin: auto;" >Already exists in the list</p>
       </div>
       <div class="clearbutton">
