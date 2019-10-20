@@ -16,8 +16,8 @@ declare var $: any;
 export class TrialsComponent implements OnInit {
   items: Observable<any[]>;
   valls: Observable<any[]>;
-  alltrials: [{}];
-  trials: [{}];
+  alltrials: any[];
+  trials: any[];
   itemRef: AngularFireList<any>;
   namen: String[];
   error: boolean;
