@@ -4,7 +4,9 @@ import { Observable } from 'rxjs';
 import { defineBase } from '@angular/core/src/render3';
 import { isType } from '@angular/core/src/type';
 import { from } from 'rxjs';
+import rawdata from '../trials/trials.json';
 
+declare var $: any;
 
 @Component({
   selector: 'app-trials',
@@ -14,9 +16,12 @@ import { from } from 'rxjs';
 export class TrialsComponent implements OnInit {
   items: Observable<any[]>;
   valls: Observable<any[]>;
+  alltrials: [{}];
+  trials: [{}];
   itemRef: AngularFireList<any>;
   namen: String[];
   error: boolean;
+
 
   constructor(db: AngularFireDatabase) {
     this.error = false;
@@ -24,19 +29,50 @@ export class TrialsComponent implements OnInit {
     this.itemRef = db.list('items', ref => ref.orderByValue());
     this.items = this.itemRef.snapshotChanges();
     this.valls = this.itemRef.valueChanges();
+
+    this.trials = rawdata.ARR;
+    this.alltrials = [];
+
+    rawdata.ARR.map( a => {
+      this.alltrials.push(a);
+    });
+
+     rawdata.HW.map( a => {
+      this.alltrials.push(a);
+    });
+
+    rawdata.SB.map( a => {
+      this.alltrials.push(a);
+    });
   }
 
   ngOnInit() {
     this.valls.subscribe(
-      x =>
-      x.forEach(
-        e => {
-          if (!this.namen.includes(e)) {
-            this.namen.push(e);
-          }
+      x => x.forEach(e => {
+        if (!this.namen.includes(e)) {
+          this.namen.push(e);
         }
-      )
-    );
+      }));
+
+      $('.ui.dropdown').dropdown({
+        clearable: true
+      });
+  }
+
+  addcard(card: string) {
+    this.voegToe(card);
+  }
+
+  setMenu(event) {
+    console.log( event.srcElement.className);
+    if (!event.srcElement.classList.contains('active')) {
+      console.log(this.alltrials);
+
+     $('#classtabs').children('.active')[0].className = 'item';
+      event.srcElement.className = 'active item';
+      const id = event.srcElement.id;
+      this.trials = rawdata[id];
+    }
   }
 
 
@@ -51,9 +87,9 @@ export class TrialsComponent implements OnInit {
   }
 
   public voegToe(value: string) {
-   const trimcap =  value.trim().replace(value.charAt(0), value.charAt(0).toLocaleUpperCase());
+    const trimcap = value.trim().replace(value.charAt(0), value.charAt(0).toLocaleUpperCase());
     if (value === '') {
-        return;
+      return;
     } else if (!this.namen.includes(trimcap)) {
       this.itemRef.push(trimcap);
       this.error = false;

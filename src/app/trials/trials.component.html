@@ -3,20 +3,34 @@
     <div class="column">
       <h1>Input Trial</h1>
       <div class="ui grid">
-      <div class="three wide column">
-      <div class="ui input">
-        <input type="text" #box (keyup.enter)="voegToe(box.value); box.value=''">
-      </div>
-      </div>
-      <div class="errbox">
-        <p *ngIf="error" (click)="error = false;" style="cursor: pointer; margin: auto;" >Already exists in the list</p>
-      </div>
-      <div class="clearbutton">
-          <button class="ui negative basic button" (click)="verwijderAlles()" >Clear</button>
+        <div class="three wide column">
+
+          <!--div class="ui fluid search selection dropdown">
+            <input type="hidden" name="country">
+            <div class="default text">Input primal</div>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+              <div class="item" *ngFor="let item of alltrials" data-value="af">{{item.title}}</div>
+            </div>
+          </div-->
+
+          <div class="ui input">
+            <input type="text" #box (keyup.enter)="voegToe(box.value); box.value=''">
+          </div>
+
+
+        </div>
+        <div class="errbox">
+          <p *ngIf="error" (click)="error = false;" style="cursor: pointer; margin: auto;">Already exists in the list
+          </p>
+        </div>
+        <div class="clearbutton">
+          <button class="ui negative basic button" (click)="verwijderAlles()">Clear</button>
+        </div>
+
       </div>
     </div>
-  </div>
-  
+
     <div class="column">
       <table class="ui right aligned table">
         <thead>
@@ -25,7 +39,8 @@
             <th>Name</th>
           </tr>
         </thead>
-        <tr class="txt" *ngFor="let item of items | async; let i = index" style="cursor: pointer;" (click)="verwijderTrial(item.key, item.payload.val())">
+        <tr class="txt" *ngFor="let item of items | async; let i = index" style="cursor: pointer;"
+          (click)="verwijderTrial(item.key, item.payload.val())">
           <td class="left aligned">{{i+1}}</td>
           <td>
             <p> {{item.payload.val()}}</p>
@@ -33,6 +48,45 @@
         </tr>
         </tbody>
       </table>
+    </div>
+  </div>
+
+
+
+
+  <div class="ui segment">
+    <div class="ui menu" id="classtabs">
+      <a id="ARR" class="active item" (click)="setMenu($event)">
+        ARR Primals
+      </a>
+      <a id="HW" class="item" (click)="setMenu($event)">
+        HW Primals
+      </a>
+      <a id="SB" class="item" (click)="setMenu($event)">
+        SB Primals
+      </a>
+      <!--div class="right menu">
+              <div class="item">
+                <div class="ui icon input">
+                  <input type="text" placeholder="Search...">
+                  <i class="search link icon"></i>
+                </div>
+              </div>
+            </div-->
+    </div>
+    <div class="ui left cards">
+      <div class="fluid card" (click)="addcard(trial.title)" *ngFor="let trial of trials">
+        <div class="image">
+          <img src={{trial.image}}>
+        </div>
+        <div class="extra content">
+          <div>
+            <span class="right">
+              {{trial.title}}
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

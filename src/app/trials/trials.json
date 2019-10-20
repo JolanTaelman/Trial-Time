@@ -1,0 +1,132 @@
+{
+  "ARR": [
+    {
+      "title": "The Navel (Extreme)",
+      "image": "https://ffxiv.consolegameswiki.com/mediawiki/images/c/cb/The_navel_extreme_banner1.png",
+      "lv": 50,
+      "type": "Trial"
+    },
+    {
+      "title": "The Bowl of Embers (Extreme)",
+      "image": "https://ffxiv.consolegameswiki.com/mediawiki/images/1/17/The_bowl_of_embers_extreme_banner1.png",
+      "lv": 50,
+      "type": "Trial"
+    },
+    {
+      "title": "The Howling Eye (Extreme)",
+      "image": "https://ffxiv.consolegameswiki.com/mediawiki/images/7/79/The_howling_eye_extreme_banner1.png",
+      "lv": 50,
+      "type": "Trial"
+    },
+    {
+      "title": "Thornmarch (Extreme)",
+      "image": "https://ffxiv.consolegameswiki.com/mediawiki/images/c/cf/Thornmarch_extreme_banner1.png",
+      "lv": 50,
+      "type": "Trial"
+    },
+    {
+      "title": "The Minstrel's Ballad: Ultima's Bane",
+      "image": "https://ffxiv.consolegameswiki.com/mediawiki/images/9/91/The_minstrels_ballad_ultimas_bane_banner1.png",
+      "lv": 50,
+      "type": "Trial"
+    },
+    {
+      "title": "The Striking Tree (Extreme)",
+      "image": "https://ffxiv.consolegameswiki.com/mediawiki/images/9/96/The_striking_tree_extreme_banner1.png",
+      "lv": 50,
+      "type": "Trial"
+    },
+    {
+      "title": "Akh Afah Amphitheatre (Extreme)",
+      "image": "https://ffxiv.consolegameswiki.com/mediawiki/images/8/87/Akh_afah_ampitheatre_extreme_banner1.png",
+      "lv": 50,
+      "type": "Trial"
+    },
+    {
+      "title": "Urth's Fount",
+      "image": "https://ffxiv.consolegameswiki.com/mediawiki/images/e/ef/Urths_fount_banner1.png",
+      "lv": 50,
+      "type": "Trial"
+    }
+  ],
+  "HW": [  {
+    "title": "Thok ast Thok (Extreme)",
+    "image": "https://ffxiv.gamerescape.com/w/images/e/ee/Thok_ast_Thok_%28Hard%29.png",
+    "lv": 60,
+    "type": "Trial"
+  },{
+    "title": "The Limitless Blue (Extreme)",
+    "image": "https://ffxiv.gamerescape.com/w/images/0/0e/The_Limitless_Blue_%28Hard%29.png",
+    "lv": 60,
+    "type": "Trial"
+  },{
+    "title": "The Minstrel's Ballad: Thordan's Reign",
+    "image": "https://ffxiv.gamerescape.com/w/images/3/33/The_Minstrel%27s_Ballad%3A_Thordan%27s_Reign.png",
+    "lv": 60,
+    "type": "Trial"
+  },{
+    "title": "Containment Bay S1T7 (Extreme)",
+    "image": "https://ffxiv.gamerescape.com/w/images/9/94/Containment_Bay_S1T7_%28Extreme%29.png",
+    "lv": 60,
+    "type": "Trial"
+  },{
+    "title": "The Minstrel's Ballad: Nidhogg's Rage",
+    "image": "https://ffxiv.gamerescape.com/w/images/a/af/The_Minstrel%27s_Ballad%3A_Nidhogg%27s_Rage.png",
+    "lv": 60,
+    "type": "Trial"
+  },{
+    "title": "Containment Bay P1T6 (Extreme)",
+    "image": "https://ffxiv.gamerescape.com/w/images/d/d1/Containment_Bay_P1T6_%28Extreme%29.png",
+    "lv": 60,
+    "type": "Trial"
+  },{
+    "title": "Containment Bay Z1T9 (Extreme)",
+    "image": "https://ffxiv.gamerescape.com/w/images/f/f2/Containment_Bay_Z1T9_%28Extreme%29.png",
+    "lv": 60,
+    "type": "Trial"
+  }
+],
+"SB": [
+  {
+    "title": "The Pool of Tribute (Extreme)",
+    "image": "https://ffxiv.gamerescape.com/w/images/7/78/The_Pool_of_Tribute_%28Extreme%29.png",
+    "lv": 70,
+    "type": "Trial"
+  }, {
+    "title": "Emanation (Extreme)",
+    "image": "https://ffxiv.gamerescape.com/w/images/5/58/Emanation_%28Extreme%29.png",
+    "lv": 70,
+    "type": "Trial"
+  }, {
+    "title": "The Minstrel's Ballad: Shinryu's Domain",
+    "image": "https://ffxiv.gamerescape.com/w/images/4/41/The_Minstrel%27s_Ballad%3A_Shinryu%27s_Domain.png",
+    "lv": 70,
+    "type": "Trial"
+  }, {
+    "title": "The Jade Stoa (Extreme)",
+    "image": "https://ffxiv.gamerescape.com/w/images/0/05/The_Jade_Stoa_%28Extreme%29.png",
+    "lv": 70,
+    "type": "Trial"
+  }, {
+    "title": "The Minstrel's Ballad: Tsukuyomi's Pain",
+    "image": "https://ffxiv.gamerescape.com/w/images/8/88/The_Minstrel%27s_Ballad%3A_Tsukuyomi%27s_Pain.png",
+    "lv": 70,
+    "type": "Trial"
+  }, {
+    "title": "The Great Hunt (Extreme)",
+    "image": "https://ffxiv.gamerescape.com/w/images/3/3c/The_Great_Hunt_%28Extreme%29.png",
+    "lv": 70,
+    "type": "Trial"
+  }, {
+    "title": "Hells' Kier (Extreme)",
+    "image": "https://ffxiv.gamerescape.com/w/images/8/8e/Hells%27_Kier_%28Extreme%29.png",
+    "lv": 70,
+    "type": "Trial"
+  }, {
+    "title": "The Wreath of Snakes (Extreme)",
+    "image": "https://ffxiv.gamerescape.com/w/images/b/b0/The_Wreath_of_Snakes_%28Extreme%29.png",
+    "lv": 70,
+    "type": "Trial"
+  }
+]
+}

@@ -8,12 +8,14 @@ import { TrialsComponent } from './trials/trials.component';
 import { environment } from 'src/environments/environment.prod';
 import { AngularFireDatabase, AngularFireDatabaseModule } from '@angular/fire/database';
 import { GridTesterComponent } from './grid-tester/grid-tester.component';
+import { TrialComponent } from './trial/trial.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TrialsComponent,
-    GridTesterComponent
+    GridTesterComponent,
+    TrialComponent
   ],
   imports: [
     BrowserModule,
