@@ -2,49 +2,55 @@
   "ARR": [
     {
       "title": "The Navel (Extreme)",
-      "image": "https://ffxiv.consolegameswiki.com/mediawiki/images/c/cb/The_navel_extreme_banner1.png",
+      "image": "https://ffxiv.gamerescape.com/w/images/4/4b/The_Navel_%28Extreme%29.png",
       "lv": 50,
       "type": "Trial"
     },
     {
       "title": "The Bowl of Embers (Extreme)",
-      "image": "https://ffxiv.consolegameswiki.com/mediawiki/images/1/17/The_bowl_of_embers_extreme_banner1.png",
+      "image": "https://ffxiv.gamerescape.com/w/images/7/7c/The_Bowl_of_Embers_%28Extreme%29.png",
       "lv": 50,
       "type": "Trial"
     },
     {
       "title": "The Howling Eye (Extreme)",
-      "image": "https://ffxiv.consolegameswiki.com/mediawiki/images/7/79/The_howling_eye_extreme_banner1.png",
+      "image": "https://ffxiv.gamerescape.com/w/images/d/db/The_Howling_Eye_%28Extreme%29.png",
       "lv": 50,
       "type": "Trial"
     },
     {
       "title": "Thornmarch (Extreme)",
-      "image": "https://ffxiv.consolegameswiki.com/mediawiki/images/c/cf/Thornmarch_extreme_banner1.png",
+      "image": "https://ffxiv.gamerescape.com/w/images/0/07/Thornmarch_%28Extreme%29.png",
       "lv": 50,
       "type": "Trial"
     },
     {
       "title": "The Minstrel's Ballad: Ultima's Bane",
-      "image": "https://ffxiv.consolegameswiki.com/mediawiki/images/9/91/The_minstrels_ballad_ultimas_bane_banner1.png",
+      "image": "https://ffxiv.gamerescape.com/w/images/4/43/The_Minstrel%27s_Ballad-_Ultima%27s_Bane.png",
       "lv": 50,
       "type": "Trial"
     },
     {
       "title": "The Striking Tree (Extreme)",
-      "image": "https://ffxiv.consolegameswiki.com/mediawiki/images/9/96/The_striking_tree_extreme_banner1.png",
+      "image": "https://ffxiv.gamerescape.com/w/images/f/f6/The_Striking_Tree_%28Extreme%29.png",
+      "lv": 50,
+      "type": "Trial"
+    },
+    {
+      "title": "The Whorleater (Extreme)",
+      "image": "https://ffxiv.gamerescape.com/w/images/a/a2/The_Whorleater_%28Extreme%29.png",
       "lv": 50,
       "type": "Trial"
     },
     {
       "title": "Akh Afah Amphitheatre (Extreme)",
-      "image": "https://ffxiv.consolegameswiki.com/mediawiki/images/8/87/Akh_afah_ampitheatre_extreme_banner1.png",
+      "image": "https://ffxiv.gamerescape.com/w/images/4/40/Akh_Afah_Amphitheatre_%28Extreme%29.png",
       "lv": 50,
       "type": "Trial"
     },
     {
       "title": "Urth's Fount",
-      "image": "https://ffxiv.consolegameswiki.com/mediawiki/images/e/ef/Urths_fount_banner1.png",
+      "image": "https://ffxiv.gamerescape.com/w/images/7/75/Urth%27sFount%28Trial%29.png",
       "lv": 50,
       "type": "Trial"
     }
