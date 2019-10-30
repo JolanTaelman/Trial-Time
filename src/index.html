@@ -13,8 +13,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
+
 <body>
-  
-  <app-root></app-root>
+  <div class="pusher"-->
+    <app-root></app-root>
 </body>
+
+<script> 
+
+  $('.sidebar')
+  .sidebar({
+    onChange: function() {
+      if ($("#buttonicon").hasClass("left icon")) {
+      $("#buttonicon").removeClass("left icon");
+      $("#buttonicon").addClass("right icon");
+    } else {
+      $("#buttonicon").removeClass("right icon");
+      $("#buttonicon").addClass("left icon");
+    }    }
+});
+
+  $("#openclosebutton").on("click", function() {
+    $('.ui.sidebar').sidebar('toggle');
+    });
+</script>
+
 </html>

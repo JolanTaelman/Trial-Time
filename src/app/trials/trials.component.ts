@@ -16,12 +16,17 @@ declare var $: any;
 export class TrialsComponent implements OnInit {
   items: Observable<any[]>;
   valls: Observable<any[]>;
-  alltrials: any[];
+  alltrials = rawdata;
   trials: any[];
   itemRef: AngularFireList<any>;
   namen: String[];
   error: boolean;
-
+  showARR: boolean;
+  showHW: boolean;
+  showSB: boolean;
+  showARRR: boolean;
+  showHWR: boolean;
+  showSBR: boolean;
 
   constructor(db: AngularFireDatabase) {
     this.error = false;
@@ -29,21 +34,7 @@ export class TrialsComponent implements OnInit {
     this.itemRef = db.list('items', ref => ref.orderByValue());
     this.items = this.itemRef.snapshotChanges();
     this.valls = this.itemRef.valueChanges();
-
     this.trials = rawdata.ARR;
-    this.alltrials = [];
-
-    rawdata.ARR.map( a => {
-      this.alltrials.push(a);
-    });
-
-     rawdata.HW.map( a => {
-      this.alltrials.push(a);
-    });
-
-    rawdata.SB.map( a => {
-      this.alltrials.push(a);
-    });
   }
 
   ngOnInit() {
@@ -54,9 +45,17 @@ export class TrialsComponent implements OnInit {
         }
       }));
 
-      $('.ui.dropdown').dropdown({
-        clearable: true
-      });
+    this.showARR = false;
+    this.showHW = false;
+    this.showSB = false;
+
+    this.showARRR = false;
+    this.showHWR = false;
+    this.showSBR = false;
+
+    $('.ui.dropdown').dropdown({
+      clearable: true
+    });
   }
 
   addcard(card: string) {
@@ -64,17 +63,13 @@ export class TrialsComponent implements OnInit {
   }
 
   setMenu(event) {
-    console.log( event.srcElement.className);
     if (!event.srcElement.classList.contains('active')) {
-      console.log(this.alltrials);
-
-     $('#classtabs').children('.active')[0].className = 'item';
+      $('#classtabs').children('.active')[0].className = 'item';
       event.srcElement.className = 'active item';
       const id = event.srcElement.id;
       this.trials = rawdata[id];
     }
   }
-
 
   public verwijderTrial(trial: string, value) {
     this.namen.splice(this.namen.indexOf(value), 1);
@@ -97,5 +92,36 @@ export class TrialsComponent implements OnInit {
       this.error = true;
     }
   }
+
+  public showBar(value: string) {
+    switch (value) {
+      case 'arr': {
+        this.showARR = !this.showARR;
+        break;
+      }
+      case 'hw': {
+        this.showHW = !this.showHW;
+        break;
+      }
+      case 'sb': {
+        this.showSB = !this.showSB;
+        break;
+      }
+      case 'arrr': {
+        this.showARRR = !this.showARRR;
+        break;
+      }
+      case 'hwr': {
+        this.showHWR = !this.showHWR;
+        break;
+      }
+      case 'sbr': {
+        this.showSBR = !this.showSBR;
+        break;
+      }
+    }
+  }
+
+
 }
 

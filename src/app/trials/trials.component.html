@@ -1,11 +1,59 @@
-<div class="ui container padding">
-  <div class="ui one column relaxed grid">
-    <div class="column">
-      <h1>Input Trial</h1>
-      <div class="ui grid">
-        <div class="three wide column">
+<div class="ui sidebar vertical menu">
 
-          <!--div class="ui fluid search selection dropdown">
+  <a class="item">
+    <p class="topMenu" (click)="showBar('arr')">ARR Primals</p>
+  </a>
+  <div class="menu" [hidden]="!showARR">
+    <a class="item bottomMenu" (click)="addcard(item.title)" *ngFor="let item of alltrials.ARR">{{item.title}}</a>
+  </div>
+
+  <a class="item">
+    <p class="topMenu" (click)="showBar('arrr')">ARR Raids</p>
+  </a>
+  <div class="menu" [hidden]="!showARRR">
+    <a class="item bottomMenu" (click)="addcard(item.title)" *ngFor="let item of alltrials.ARRR">{{item.title}}</a>
+  </div>
+
+  <a class="item">
+    <p class="topMenu" (click)="showBar('hw')">HW Primals</p>
+  </a>
+  <div class="menu" [hidden]="!showHW">
+    <a class="item bottomMenu" (click)="addcard(item.title)" *ngFor="let item of alltrials.HW">{{item.title}}</a>
+  </div>
+
+  <a class="item">
+    <p class="topMenu" (click)="showBar('hwr')">HW Raids</p>
+  </a>
+  <div class="menu" [hidden]="!showHWR">
+    <a class="item bottomMenu" (click)="addcard(item.title)" *ngFor="let item of alltrials.HWR">{{item.title}}</a>
+  </div>
+
+  <a class="item">
+    <p class="topMenu" (click)="showBar('sb')">SB Primals</p>
+  </a>
+  <div class="menu" [hidden]="!showSB">
+    <a class="item bottomMenu" (click)="addcard(item.title)" *ngFor="let item of alltrials.SB">{{item.title}}</a>
+  </div>
+  <a class="item">
+    <p class="topMenu" (click)="showBar('sbr')">SB Raids</p>
+  </a>
+  <div class="menu" [hidden]="!showSBR">
+    <a class="item bottomMenu" (click)="addcard(item.title)" *ngFor="let item of alltrials.SBR">{{item.title}}</a>
+  </div>
+
+
+</div>
+<div class="ui left fixed" id="openclosebutton">
+  <i id="buttonicon" style="padding-left: 20%;" class="angle left icon"></i>
+</div>
+<div class="pusher">
+  <div class="ui container padding">
+    <div class="ui one column relaxed grid">
+      <div class="column">
+        <h1>Input Trial</h1>
+        <div class="ui grid">
+          <div class="three wide column">
+            <!--div class="ui fluid search selection dropdown">
             <input type="hidden" name="country">
             <div class="default text">Input primal</div>
             <i class="dropdown icon"></i>
@@ -13,59 +61,59 @@
               <div class="item" *ngFor="let item of alltrials" data-value="af">{{item.title}}</div>
             </div>
           </div-->
-
-          <div class="ui input">
-            <input type="text" #box (keyup.enter)="voegToe(box.value); box.value=''">
+            <div class="ui input">
+              <input type="text" #box (keyup.enter)="voegToe(box.value); box.value=''">
+            </div>
           </div>
-
-
+          <div class="errbox">
+            <p *ngIf="error" (click)="error = false;" style="cursor: pointer; margin: auto;">Already exists in the list
+            </p>
+          </div>
+          <div class="clearbutton">
+            <button class="ui negative basic button" (click)="verwijderAlles()">Clear</button>
+          </div>
         </div>
-        <div class="errbox">
-          <p *ngIf="error" (click)="error = false;" style="cursor: pointer; margin: auto;">Already exists in the list
-          </p>
-        </div>
-        <div class="clearbutton">
-          <button class="ui negative basic button" (click)="verwijderAlles()">Clear</button>
-        </div>
-
+      </div>
+      <div class="column">
+        <table class="ui right aligned table">
+          <thead>
+            <tr>
+              <th class="left aligned">#</th>
+              <th>Name</th>
+            </tr>
+          </thead>
+          <tr class="txt" *ngFor="let item of items | async; let i = index" style="cursor: pointer;"
+            (click)="verwijderTrial(item.key, item.payload.val())">
+            <td class="left aligned">{{i+1}}</td>
+            <td>
+              <p> {{item.payload.val()}}</p>
+            </td>
+          </tr>
+          </tbody>
+        </table>
       </div>
     </div>
-
-    <div class="column">
-      <table class="ui right aligned table">
-        <thead>
-          <tr>
-            <th class="left aligned">#</th>
-            <th>Name</th>
-          </tr>
-        </thead>
-        <tr class="txt" *ngFor="let item of items | async; let i = index" style="cursor: pointer;"
-          (click)="verwijderTrial(item.key, item.payload.val())">
-          <td class="left aligned">{{i+1}}</td>
-          <td>
-            <p> {{item.payload.val()}}</p>
-          </td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-
-
-
-  <div class="ui segment">
-    <div class="ui menu" id="classtabs">
-      <a id="ARR" class="active item" (click)="setMenu($event)">
-        ARR Primals
-      </a>
-      <a id="HW" class="item" (click)="setMenu($event)">
-        HW Primals
-      </a>
-      <a id="SB" class="item" (click)="setMenu($event)">
-        SB Primals
-      </a>
-      <!--div class="right menu">
+    <div class="ui segment">
+      <div class="ui menu" id="classtabs">
+        <a id="ARR" class="active item" (click)="setMenu($event)">
+          ARR Primals
+        </a>
+        <a id="ARRR" class="item" (click)="setMenu($event)">
+          ARR Raids
+        </a>
+        <a id="HW" class="item" (click)="setMenu($event)">
+          HW Primals
+        </a>
+        <a id="HWR" class="item" (click)="setMenu($event)">
+          HW Raids
+        </a>
+        <a id="SB" class="item" (click)="setMenu($event)">
+          SB Primals
+        </a>
+        <a id="SBR" class="item" (click)="setMenu($event)">
+          SB Raids
+        </a>
+        <!--div class="right menu">
               <div class="item">
                 <div class="ui icon input">
                   <input type="text" placeholder="Search...">
@@ -73,17 +121,18 @@
                 </div>
               </div>
             </div-->
-    </div>
-    <div class="ui left cards">
-      <div class="fluid card" (click)="addcard(trial.title)" *ngFor="let trial of trials">
-        <div class="image">
-          <img src={{trial.image}}>
-        </div>
-        <div class="extra content">
-          <div>
-            <span class="right">
-              {{trial.title}}
-            </span>
+      </div>
+      <div class="ui left cards">
+        <div class="fluid card" (click)="addcard(trial.title)" *ngFor="let trial of trials">
+          <div class="image">
+            <img src={{trial.image}}>
+          </div>
+          <div class="extra content">
+            <div>
+              <span class="right">
+                {{trial.title}}
+              </span>
+            </div>
           </div>
         </div>
       </div>

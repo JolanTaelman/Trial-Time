@@ -12,8 +12,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="stylesheet" href="styles.0e4338761429b4eb16ac.css"></head>
+
 <body>
-  
-  <app-root></app-root>
-<script type="text/javascript" src="runtime.26209474bfa8dc87a77c.js"></script><script type="text/javascript" src="polyfills.bebee6a5ef0ece001bc6.js"></script><script type="text/javascript" src="main.e87643689f20553ffe3b.js"></script></body>
+  <div class="pusher"-->
+    <app-root></app-root>
+<script type="text/javascript" src="runtime.26209474bfa8dc87a77c.js"></script><script type="text/javascript" src="polyfills.bebee6a5ef0ece001bc6.js"></script><script type="text/javascript" src="main.4b13265d7cd9d14840f1.js"></script></body>
+
+<script> 
+
+  $('.sidebar')
+  .sidebar({
+    onChange: function() {
+      if ($("#buttonicon").hasClass("left icon")) {
+      $("#buttonicon").removeClass("left icon");
+      $("#buttonicon").addClass("right icon");
+    } else {
+      $("#buttonicon").removeClass("right icon");
+      $("#buttonicon").addClass("left icon");
+    }    }
+});
+
+  $("#openclosebutton").on("click", function() {
+    $('.ui.sidebar').sidebar('toggle');
+    });
+</script>
+
 </html>

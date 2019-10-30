@@ -21,3 +21,26 @@
     margin-right:0;
     margin-top: 10pt;
     }
+
+.ui.container{
+    width: 1250px;
+}
+
+.topMenu{
+    font-size: 1.1em;
+    width: inherit;
+}
+
+.ui.vertical.menu .menu .item {
+    font-size: 1em !important;
+}
+
+#openclosebutton {
+    border-bottom-right-radius: 20px; 
+    background-color: #ffffff; 
+    width: 30px; 
+    height: 25px; 
+    border-bottom: 1px solid #d4d4d4;
+    border-right: 1px solid #d4d4d4;
+
+}
