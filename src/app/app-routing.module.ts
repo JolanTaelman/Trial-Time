@@ -7,10 +7,6 @@ const routes: Routes = [
   { path: 'trials',
   component: TrialComponent
 },
-  { path: '',
-  redirectTo: '/trial',
-  pathMatch: 'full'
-},
   { path: '**', component: TrialsComponent }
 ];
 
