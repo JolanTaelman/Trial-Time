@@ -43,7 +43,7 @@
 
 
 </div>
-<div class="ui left fixed" id="openclosebutton">
+<div class="ui left fixed" id="openclosebutton" (click)="openclosebutton()" >
   <i id="buttonicon" style="padding-left: 20%;" class="angle left icon"></i>
 </div>
 <div class="pusher">
@@ -74,6 +74,45 @@
           </div>
         </div>
       </div>
+      <div class="ui column">
+      <div class="ui segment">
+        <div class="ui menu" id="classtabs">
+          <a id="ARR" class="active item" (click)="setMenu($event)">
+            ARR Primals
+          </a>
+          <a id="ARRR" class="item" (click)="setMenu($event)">
+            ARR Raids
+          </a>
+          <a id="HW" class="item" (click)="setMenu($event)">
+            HW Primals
+          </a>
+          <a id="HWR" class="item" (click)="setMenu($event)">
+            HW Raids
+          </a>
+          <a id="SB" class="item" (click)="setMenu($event)">
+            SB Primals
+          </a>
+          <a id="SBR" class="item" (click)="setMenu($event)">
+            SB Raids
+          </a>
+
+        </div>
+        <div class="ui left cards">
+          <div class="fluid card" (click)="addcard(trial.title)" *ngFor="let trial of trials">
+            <div class="image">
+              <img src={{trial.image}}>
+            </div>
+            <div class="extra content">
+              <div>
+                <span class="right">
+                  {{trial.title}}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div></div>
+
       <div class="column">
         <table class="ui right aligned table">
           <thead>
@@ -82,6 +121,7 @@
               <th>Name</th>
             </tr>
           </thead>
+          <tbody>
           <tr class="txt" *ngFor="let item of items | async; let i = index" style="cursor: pointer;"
             (click)="verwijderTrial(item.key, item.payload.val())">
             <td class="left aligned">{{i+1}}</td>
@@ -92,50 +132,24 @@
           </tbody>
         </table>
       </div>
-    </div>
-    <div class="ui segment">
-      <div class="ui menu" id="classtabs">
-        <a id="ARR" class="active item" (click)="setMenu($event)">
-          ARR Primals
-        </a>
-        <a id="ARRR" class="item" (click)="setMenu($event)">
-          ARR Raids
-        </a>
-        <a id="HW" class="item" (click)="setMenu($event)">
-          HW Primals
-        </a>
-        <a id="HWR" class="item" (click)="setMenu($event)">
-          HW Raids
-        </a>
-        <a id="SB" class="item" (click)="setMenu($event)">
-          SB Primals
-        </a>
-        <a id="SBR" class="item" (click)="setMenu($event)">
-          SB Raids
-        </a>
-        <!--div class="right menu">
-              <div class="item">
-                <div class="ui icon input">
-                  <input type="text" placeholder="Search...">
-                  <i class="search link icon"></i>
-                </div>
-              </div>
-            </div-->
-      </div>
-      <div class="ui left cards">
-        <div class="fluid card" (click)="addcard(trial.title)" *ngFor="let trial of trials">
-          <div class="image">
-            <img src={{trial.image}}>
-          </div>
-          <div class="extra content">
-            <div>
-              <span class="right">
-                {{trial.title}}
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+     </div>
   </div>
 </div>
+
+<script>
+  $('.sidebar')
+  .sidebar({
+    onChange: function() {
+      if ($("#buttonicon").hasClass("left icon")) {
+      $("#buttonicon").removeClass("left icon");
+      $("#buttonicon").addClass("right icon");
+    } else {
+      $("#buttonicon").removeClass("right icon");
+      $("#buttonicon").addClass("left icon");
+    }    }
+});
+
+  $("#openclosebutton").on("click", function() {
+    $('.ui.sidebar').sidebar('toggle');
+    });
+</script>

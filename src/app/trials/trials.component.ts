@@ -1,11 +1,11 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { AngularFireDatabase, AngularFireList, listChanges } from '@angular/fire/database';
 import { Observable } from 'rxjs';
-import { defineBase } from '@angular/core/src/render3';
-import { isType } from '@angular/core/src/type';
+// import { defineBase } from '@angular/core/src/render3';
+// import { isType } from '@angular/core/src/type';
 import { from } from 'rxjs';
 import rawdata from '../trials/trials.json';
-
+import {orderBy} from 'lodash/';
 declare var $: any;
 
 @Component({
@@ -35,6 +35,8 @@ export class TrialsComponent implements OnInit {
     this.items = this.itemRef.snapshotChanges();
     this.valls = this.itemRef.valueChanges();
     this.trials = rawdata.ARR;
+    this.trials.sort((a, b) => (a.lv > b.lv) ? 1 : -1);
+
   }
 
   ngOnInit() {
@@ -62,12 +64,24 @@ export class TrialsComponent implements OnInit {
     this.voegToe(card);
   }
 
+  openclosebutton() {
+    if ($('#buttonicon').hasClass('left icon')) {
+      $('#buttonicon').removeClass('left icon');
+      $('#buttonicon').addClass('right icon');
+    } else {
+      $('#buttonicon').removeClass('right icon');
+      $('#buttonicon').addClass('left icon');
+    }
+    $('.ui.sidebar').sidebar('toggle');
+  }
+
   setMenu(event) {
     if (!event.srcElement.classList.contains('active')) {
       $('#classtabs').children('.active')[0].className = 'item';
       event.srcElement.className = 'active item';
       const id = event.srcElement.id;
       this.trials = rawdata[id];
+      this.trials.sort((a, b) => (a.lv > b.lv) ? 1 : -1);
     }
   }
 
@@ -121,7 +135,4 @@ export class TrialsComponent implements OnInit {
       }
     }
   }
-
-
 }
-
